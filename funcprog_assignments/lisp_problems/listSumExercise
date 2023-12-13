@@ -1,0 +1,21 @@
+;; This buffer is for text that is not saved, and for Lisp evaluation.
+;; To create a file, visit it with C-x C-f and enter text in its buffer.
+
+(defun sum (l)
+ (if (null l)
+   0
+   (+(car l) (sum(cdr l)))
+ )
+)
+
+;;tail recursion
+
+(defun tailSum (l acc)
+(if(null l)
+  acc
+  (tailSum (cdr l) (+ acc (car l)))
+)
+)
+
+
+
